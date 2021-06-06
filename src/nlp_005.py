@@ -17,13 +17,13 @@ https://kotobank.jp/word/Nグラム-1702302
 '''
 
 
-def bi_gram(arg):
-    return [arg[i:i + 2] for i in range(len(arg) - 1)]
+def n_gram(arg, n):
+    return [arg[i:i + n] for i in range(len(arg) - n + 1)]
 
 
 def char_bi_gram(arg):
-    return bi_gram(arg)
+    return n_gram(arg, 2)
 
 
 def word_bi_gram(arg):
-    return bi_gram(arg.split(' '))
+    return n_gram(arg.split(' '), 2)
