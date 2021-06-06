@@ -21,7 +21,7 @@ def _set(arg1, arg2):
 
 def union(arg1, arg2):
     x, y = _set(arg1, arg2)
-    return x.union(y)
+    return x | y
 
 
 def intersection(arg1, arg2):
