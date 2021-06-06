@@ -13,24 +13,24 @@ bi-gramの集合を，それぞれ, XとYとして求め，XとYの和集合，
 '''
 
 
-def __set(arg1, arg2):
+def _set(arg1, arg2):
     x = set(nlp_005.char_bi_gram(arg1))
     y = set(nlp_005.char_bi_gram(arg2))
     return x, y
 
 
 def union(arg1, arg2):
-    x, y = __set(arg1, arg2)
+    x, y = _set(arg1, arg2)
     return x.union(y)
 
 
 def intersection(arg1, arg2):
-    x, y = __set(arg1, arg2)
+    x, y = _set(arg1, arg2)
     return x & y
 
 
 def difference(arg1, arg2):
-    x, y = __set(arg1, arg2)
+    x, y = _set(arg1, arg2)
     return x - y
 
 
