@@ -12,9 +12,9 @@ lectures involving quantum mechanics.”
 
 
 def test_execute():
-    excepted = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9]
     arg = 'Now I need a drink, alcoholic of course, after the heavy lectures \
 involving quantum mechanics.'
+    excepted = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9]
     actual = nlp_003.execute(arg)
     print(actual)
     assert(excepted == actual)

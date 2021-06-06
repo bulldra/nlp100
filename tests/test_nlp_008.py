@@ -14,16 +14,16 @@ import nlp_008
 
 
 def test_cipher():
-    expected = 'kzizkzizkzizwrhv'
     arg = 'paraparaparadise'
+    expected = 'kzizkzizkzizwrhv'
     actual = nlp_008.cipher(arg)
     print(actual)
     assert(expected == actual)
 
 
 def test_decipher():
-    expected = 'paraparaparadise'
     arg = 'paraparaparadise'
+    expected = 'paraparaparadise'
     actual = nlp_008.cipher(nlp_008.cipher(arg))
     print(actual)
     assert(expected == actual)

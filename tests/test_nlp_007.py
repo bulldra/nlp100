@@ -11,7 +11,10 @@ import nlp_007
 
 
 def test_execute():
+    arg1 = 12
+    arg2 = '気温'
+    arg3 = 22.4
     expected = '12時の気温は22.4'
-    actual = nlp_007.execute(12, '気温', 22.4)
+    actual = nlp_007.execute(arg1, arg2, arg3)
     print(actual)
     assert(expected == actual)

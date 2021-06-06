@@ -9,7 +9,8 @@ import nlp_001
 
 
 def test_execute():
+    arg = 'パタトクカシーー'
     excepted = 'パトカー'
-    actual = nlp_001.execute('パタトクカシーー')
+    actual = nlp_001.execute(arg)
     print(actual)
     assert(excepted == actual)

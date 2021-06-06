@@ -16,12 +16,12 @@ the phenomenal power of the human mind .”）を
 
 
 def test_execute():
-    expected = 'I could believe that \
-I human couldn’t actually what I was understand : \
-the power phenomenal of the reading mind .'
     arg = 'I couldn’t believe that \
 I could actually understand what I was reading : \
 the phenomenal power of the human mind .'
+    expected = 'I could believe that \
+I human couldn’t actually what I was understand : \
+the power phenomenal of the reading mind .'
     actual = nlp_009.execute(arg, seed=1)
     print(actual)
     assert(expected == actual)
