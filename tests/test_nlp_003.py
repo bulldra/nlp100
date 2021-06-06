@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 import nlp_003
 
 '''
@@ -14,4 +16,5 @@ def test_execute():
     arg = 'Now I need a drink, alcoholic of course, after the heavy lectures \
 involving quantum mechanics.'
     actual = nlp_003.execute(arg)
+    print(actual)
     assert(excepted == actual)

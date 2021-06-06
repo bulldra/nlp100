@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 import nlp_001
 
 '''
@@ -9,4 +11,5 @@ import nlp_001
 def test_execute():
     excepted = 'パトカー'
     actual = nlp_001.execute('パタトクカシーー')
+    print(actual)
     assert(excepted == actual)
