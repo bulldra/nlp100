@@ -1,1 +1,1 @@
-docker-compose run -e "PYTHONPATH=./" --entrypoint "pytest -s /data/tests/" nlp100
+docker-compose run --entrypoint "pytest -s /data/tests/" nlp100
