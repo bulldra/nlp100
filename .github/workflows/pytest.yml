@@ -7,7 +7,7 @@ on:
       - 'src/*'
       - 'tests/*'
       - 'config/*'
-      - '.github/worflows/*'
+      - '.github/workflows/*'
   pull_request:
     branches:
         -main
