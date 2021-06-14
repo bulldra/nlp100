@@ -11,12 +11,12 @@ on:
       - '.github/workflows/*'
   pull_request:
     branches:
-        -main
+      -main
 
 jobs:
   unit-test:
     timeout-minutes: 15
-    runs-on: ubuntu-latest        
+    runs-on: ubuntu-latest
     container: ghcr.io/${{ github.repository }}:latest
     steps:
       - run: pwd
