@@ -19,5 +19,6 @@ jobs:
     steps:
       - run: pwd
       - uses: actions/checkout@v2
-      - run: curl https://nlp100.github.io/data/popular-names.txt > {{ GITHUB_WORKSPACE }}/work/popular-names.txt
+      - run: mkdir work
+      - run: curl https://nlp100.github.io/data/popular-names.txt > ./work/popular-names.txt
       - run: pytest -s ./tests/
