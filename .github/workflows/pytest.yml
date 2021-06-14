@@ -15,8 +15,9 @@ jobs:
   unit-test:
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    default:
-      working-directory: /data
+    defaults:
+      run:
+        working-directory: /data
     container: ghcr.io/${{ github.repository }}:latest
     steps:
       - run: pwd
