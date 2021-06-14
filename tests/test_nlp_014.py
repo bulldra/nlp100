@@ -13,7 +13,7 @@ import util
 
 def test_head1():
     arg1 = 1
-    arg2 = '../work/popular-names.txt'
+    arg2 = './work/popular-names.txt'
     expected = util.unix_cmd(f'head -n {arg1} {arg2}')
     actual = nlp_014.execute(arg2, arg1)
     assert(expected == actual)
@@ -21,7 +21,7 @@ def test_head1():
 
 def test_head3():
     arg1 = 3
-    arg2 = '../work/popular-names.txt'
+    arg2 = './work/popular-names.txt'
     expected = util.unix_cmd(f'head -n {arg1} {arg2}')
     actual = nlp_014.execute(arg2, arg1)
     assert(expected == actual)
@@ -29,7 +29,7 @@ def test_head3():
 
 def test_head10():
     arg1 = 10
-    arg2 = '../work/popular-names.txt'
+    arg2 = './work/popular-names.txt'
     expected = util.unix_cmd(f'head -n {arg1} {arg2}')
     actual = nlp_014.execute(arg2, arg1)
     assert(expected == actual)

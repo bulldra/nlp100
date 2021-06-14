@@ -13,8 +13,8 @@ import util
 
 def test_col1():
     arg1 = 1
-    arg2 = '../work/popular-names.txt'
-    arg3 = '../work/col1.txt'
+    arg2 = './work/popular-names.txt'
+    arg3 = './work/col1.txt'
     expected = util.unix_cmd(f'cut -f {arg1} {arg2}')
     nlp_012.out(arg1, arg2, arg3)
     actual = util.unix_cmd(f'cat {arg3}')
@@ -23,8 +23,8 @@ def test_col1():
 
 def test_col2():
     arg1 = 2
-    arg2 = '../work/popular-names.txt'
-    arg3 = '../work/col2.txt'
+    arg2 = './work/popular-names.txt'
+    arg3 = './work/col2.txt'
     expected = util.unix_cmd(f'cut -f {arg1} {arg2}')
     nlp_012.out(arg1, arg2, arg3)
     actual = util.unix_cmd(f'cat {arg3}')

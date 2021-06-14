@@ -12,8 +12,8 @@ import util
 '''
 
 def test_execute():
-    arg1 = '../work/col1.txt'
-    arg2 = '../work/col2.txt'
+    arg1 = './work/col1.txt'
+    arg2 = './work/col2.txt'
     expected = util.unix_cmd(f'paste {arg1} {arg2}')
     actual = nlp_013.execute(arg1, arg2)
     assert(expected == actual)

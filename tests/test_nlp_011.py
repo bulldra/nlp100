@@ -10,19 +10,19 @@ import util
 '''
 
 def test_sed():
-    arg = '../work/popular-names.txt'
+    arg = './work/popular-names.txt'
     expected = util.unix_cmd(f'sed -e "s/\t/ /g" {arg}')
     actual = nlp_011.execute(arg)
     assert(expected == actual)
 
 def test_tr():
-    arg = '../work/popular-names.txt'
+    arg = './work/popular-names.txt'
     expected = util.unix_cmd(f'cat {arg} | tr "\t" " "')
     actual = nlp_011.execute(arg)
     assert(expected == actual)
 
 def test_expand():
-    arg = '../work/popular-names.txt'
+    arg = './work/popular-names.txt'
     expected = util.unix_cmd(f'expand -t 1 {arg}')
     actual = nlp_011.execute(arg)
     assert(expected == actual)

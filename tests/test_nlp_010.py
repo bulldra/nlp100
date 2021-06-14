@@ -10,7 +10,7 @@ import util
 '''
 
 def test_execute():
-    arg = '../work/popular-names.txt'
+    arg = './work/popular-names.txt'
     expected = util.unix_cmd(f'cat {arg} | wc -l').rstrip()
     actual = str(nlp_010.execute(arg))
     assert(expected == actual)
