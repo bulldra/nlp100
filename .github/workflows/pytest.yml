@@ -21,7 +21,6 @@ jobs:
         working-directory: /data
     container: ghcr.io/${{ github.repository }}:latest
     steps:
-      - 
       - uses: actions/checkout@v2
       - run: curl https://nlp100.github.io/data/popular-names.txt > ./work/popular-names.txt
       - run: pytest -s ./tests/
