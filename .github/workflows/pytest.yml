@@ -15,15 +15,9 @@ jobs:
   unit-test:
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: /data
     container: ghcr.io/${{ github.repository }}:latest
     steps:
       - run: pwd
       - uses: actions/checkout@v2
-        with:
-          path: /data
-      - run: curl https://nlp100.github.io/data/popular-names.txt > ./work/popular-names.txt
+      - run: curl https://nlp100.github.io/data/popular-names.txt > {{ GITHUB_WORKSPACE }}/work/popular-names.txt
       - run: pytest -s ./tests/
