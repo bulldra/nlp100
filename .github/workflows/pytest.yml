@@ -22,6 +22,6 @@ jobs:
     steps:
       - run: pwd
       - uses: actions/checkout@v2
-      - run: cp -r {{ GITHUB_WORKSPACE }} /data
+      - run: cp -r ${{ GITHUB_WORKSPACE }} /data
       - run: curl https://nlp100.github.io/data/popular-names.txt > ./work/popular-names.txt
       - run: pytest -s ./tests/
