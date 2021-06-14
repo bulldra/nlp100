@@ -22,5 +22,6 @@ jobs:
       - run: pwd
       - uses: actions/checkout@v2
       - run: curl https://nlp100.github.io/data/popular-names.txt > /data/work/popular-names.txt
+      - run: cp -r . /data
       - run: pytest -s ./tests/
         working-directory: /data
