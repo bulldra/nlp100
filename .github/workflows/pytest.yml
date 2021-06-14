@@ -1,4 +1,5 @@
 name: pyetst
+
 on:
   push:
     branches:
@@ -11,6 +12,7 @@ on:
   pull_request:
     branches:
         -main
+
 jobs:
   unit-test:
     timeout-minutes: 15
