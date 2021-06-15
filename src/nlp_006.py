@@ -4,13 +4,13 @@ __version__ = "0.1.0"
 
 import nlp_005
 
-'''
+"""
 06. 集合
 “paraparaparadise”と”paragraph”に含まれる文字
 bi-gramの集合を，それぞれ, XとYとして求め，XとYの和集合，
 積集合，差集合を求めよ．
 さらに，’se’というbi-gramがXおよびYに含まれるかどうかを調べよ．
-'''
+"""
 
 
 def _set(arg1, arg2):

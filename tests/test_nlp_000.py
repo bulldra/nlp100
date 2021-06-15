@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 import nlp_000
 
-'''
+"""
 00. 文字列の逆順
 文字列”stressed”の文字を逆に（末尾から先頭に向かって）並べた文字列を得よ．
-'''
+"""
 
 
 def test_execute():
-    arg = 'stressed'
-    excepted = 'desserts'
+    arg = "stressed"
+    excepted = "desserts"
     actual = nlp_000.execute(arg)
     print(actual)
-    assert(excepted == actual)
+    assert excepted == actual
