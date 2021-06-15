@@ -9,6 +9,12 @@ __version__ = "0.1.0"
 """
 
 
-def execute(path, tail):
-    with open(path, "r") as f1:
-        return "\n".join(f1.read().splitlines()[-tail:]) + "\n"
+def execute(path, number, out):
+    with open(path, "r") as f:
+        text = f.read().splitlines()
+        flagsize = len(text) // number + 1
+        for n in range(number):
+            with open(f"{out}{n:02d}", "w") as w:
+                start = n * flagsize
+                end = min((n + 1) * flagsize, len(text))
+                w.write("\n".join(text[start:end]) + "\n")

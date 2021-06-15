@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 __version__ = "0.1.0"
+
+import filecmp
+
 import nlp_016
 import util
 
@@ -12,19 +15,42 @@ import util
 
 
 def test_split1():
-    arg1 = 1
-    arg2 = "./work/popular-names.txt"
-    util.unix_cmd(f"split -l {arg1} {arg2} ./work/split_expected1_")
+    input = "./work/popular-names.txt"
+    num = 1
+    exp_out = f"./work/split_expected_{num}_"
+    act_out = f"./work/split_actual_{num}_"
+    util.unix_cmd(
+        f"split -l $((`cat {input} | wc -l` / {num} + 1 )) {input} -d {exp_out}"
+    )
+    nlp_016.execute(input, num, act_out)
+    assert filecmp.cmp(f"{exp_out}00", f"{act_out}00")
 
 
-#    actual = nlp_016.execute(arg2, arg1, "./work/split_actual3_")
-#    assert expected == actual
-
-"""
 def test_split3():
-    arg1 = 3
-    arg2 = "./work/popular-names.txt"
-    expected = util.unix_cmd(f"split -l {arg1} {arg2} ./work/split_expected3_")
-    actual = nlp_016.execute(arg1, arg2, "./work/split_actual3_")
-    assert expected == actual
-"""
+    input = "./work/popular-names.txt"
+    num = 3
+    exp_out = f"./work/split_expected_{num}_"
+    act_out = f"./work/split_actual_{num}_"
+    util.unix_cmd(
+        f"split -l $((`cat {input} | wc -l` / {num} + 1 )) {input} -d {exp_out}"
+    )
+    nlp_016.execute(input, num, act_out)
+    assert filecmp.cmp(f"{exp_out}00", f"{act_out}00")
+    assert filecmp.cmp(f"{exp_out}01", f"{act_out}01")
+    assert filecmp.cmp(f"{exp_out}02", f"{act_out}02")
+
+
+def test_split5():
+    input = "./work/popular-names.txt"
+    num = 5
+    exp_out = f"./work/split_expected_{num}_"
+    act_out = f"./work/split_actual_{num}_"
+    util.unix_cmd(
+        f"split -l $((`cat {input} | wc -l` / {num} + 1 )) {input} -d {exp_out}"
+    )
+    nlp_016.execute(input, num, act_out)
+    assert filecmp.cmp(f"{exp_out}00", f"{act_out}00")
+    assert filecmp.cmp(f"{exp_out}01", f"{act_out}01")
+    assert filecmp.cmp(f"{exp_out}02", f"{act_out}02")
+    assert filecmp.cmp(f"{exp_out}03", f"{act_out}03")
+    assert filecmp.cmp(f"{exp_out}04", f"{act_out}04")
