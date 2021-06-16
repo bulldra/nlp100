@@ -10,14 +10,13 @@ __version__ = "0.1.0"
 """
 
 
-def out(field, input, output):
-    text = execute(field, input)
+def execute(field, input, output):
+    text = cut(field, input)
     with open(output, "w") as f:
         f.write(text)
 
 
-def execute(field, path):
+def cut(field, path):
     with open(path, "r") as f:
-        return (
-            "\n".join([ff.split("\t")[field - 1] for ff in f.read().splitlines()])
-        ) + "\n"
+        r = [ff.split("\t")[field - 1] for ff in f.read().splitlines()]
+        return "\n".join(r) + "\n"

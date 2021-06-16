@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 __version__ = "0.1.0"
 
+import pandas
+
 """
 15. 末尾のN行を出力
 自然数Nをコマンドライン引数などの手段で受け取り，
@@ -9,6 +11,8 @@ __version__ = "0.1.0"
 """
 
 
-def execute(path, tail):
-    with open(path, "r") as f1:
-        return "\n".join(f1.read().splitlines()[-tail:]) + "\n"
+def execute(input, num):
+    df = pandas.read_csv(
+        input, sep="\t", header=None, names=["name", "gender", "num", "year"]
+    )
+    return df.tail(num).to_csv(sep="\t", header=None, index=False)

@@ -11,8 +11,8 @@ import pandas
 """
 
 
-def execute(path):
+def execute(input):
     df = pandas.read_csv(
-        path, sep="\t", header=None, names=["name", "gender", "num", "year"]
+        input, sep="\t", header=None, names=["name", "gender", "num", "year"]
     )
-    return "\n".join(df.sort_values("name")["name"].unique()) + "\n"
+    return "\n".join(df["name"].sort_values().unique()) + "\n"

@@ -13,21 +13,24 @@ import util
 """
 
 
+def cut(col, input, output):
+    expected = util.unix_cmd(f"cut -f {col} {input}")
+    nlp_012.execute(col, input, output)
+    actual = util.unix_cmd(f"cat {output}")
+    return expected, actual
+
+
 def test_col1():
-    arg1 = 1
-    arg2 = "./work/popular-names.txt"
-    arg3 = "./work/col1.txt"
-    expected = util.unix_cmd(f"cut -f {arg1} {arg2}")
-    nlp_012.out(arg1, arg2, arg3)
-    actual = util.unix_cmd(f"cat {arg3}")
+    col = 1
+    input = "./work/popular-names.txt"
+    output = "./work/col1.txt"
+    expected, actual = cut(col, input, output)
     assert expected == actual
 
 
 def test_col2():
-    arg1 = 2
-    arg2 = "./work/popular-names.txt"
-    arg3 = "./work/col2.txt"
-    expected = util.unix_cmd(f"cut -f {arg1} {arg2}")
-    nlp_012.out(arg1, arg2, arg3)
-    actual = util.unix_cmd(f"cat {arg3}")
+    col = 2
+    input = "./work/popular-names.txt"
+    output = "./work/col2.txt"
+    expected, actual = cut(col, input, output)
     assert expected == actual

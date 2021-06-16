@@ -9,8 +9,8 @@ __version__ = "0.1.0"
 """
 
 
-def execute(path, number, out):
-    with open(path, "r") as f:
+def execute(input, number, out):
+    with open(input, "r") as f:
         text = f.read().splitlines()
         flagsize = len(text) // number + 1
         for n in range(number):

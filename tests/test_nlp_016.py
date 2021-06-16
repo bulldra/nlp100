@@ -15,41 +15,30 @@ import util
 """
 
 
-def test_split1():
-    input = "./work/popular-names.txt"
-    num = 1
+def split(input, num):
     exp_out = f"./work/split_expected_{num}_"
     act_out = f"./work/split_actual_{num}_"
     util.unix_cmd(
         f"split -l $((`cat {input} | wc -l` / {num} + 1 )) {input} -d {exp_out}"
     )
     nlp_016.execute(input, num, act_out)
+    return exp_out, act_out
+
+
+def test_split1():
+    exp_out, act_out = split("./work/popular-names.txt", 1)
     assert filecmp.cmp(f"{exp_out}00", f"{act_out}00")
 
 
 def test_split3():
-    input = "./work/popular-names.txt"
-    num = 3
-    exp_out = f"./work/split_expected_{num}_"
-    act_out = f"./work/split_actual_{num}_"
-    util.unix_cmd(
-        f"split -l $((`cat {input} | wc -l` / {num} + 1 )) {input} -d {exp_out}"
-    )
-    nlp_016.execute(input, num, act_out)
+    exp_out, act_out = split("./work/popular-names.txt", 3)
     assert filecmp.cmp(f"{exp_out}00", f"{act_out}00")
     assert filecmp.cmp(f"{exp_out}01", f"{act_out}01")
     assert filecmp.cmp(f"{exp_out}02", f"{act_out}02")
 
 
 def test_split5():
-    input = "./work/popular-names.txt"
-    num = 5
-    exp_out = f"./work/split_expected_{num}_"
-    act_out = f"./work/split_actual_{num}_"
-    util.unix_cmd(
-        f"split -l $((`cat {input} | wc -l` / {num} + 1 )) {input} -d {exp_out}"
-    )
-    nlp_016.execute(input, num, act_out)
+    exp_out, act_out = split("./work/popular-names.txt", 5)
     assert filecmp.cmp(f"{exp_out}00", f"{act_out}00")
     assert filecmp.cmp(f"{exp_out}01", f"{act_out}01")
     assert filecmp.cmp(f"{exp_out}02", f"{act_out}02")

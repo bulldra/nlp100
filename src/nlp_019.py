@@ -15,6 +15,6 @@ def execute(path):
     df = pandas.read_csv(
         path, sep="\t", header=None, names=["name", "gender", "num", "year"]
     )
-    freq = df.groupby("name").size().reset_index(name="freq")
-    freq = freq.sort_values(["freq", "name"], ascending=[False, True])
-    return freq[["name"]].to_csv(sep="\t", index=False, header=None)
+    df = df.groupby("name").size().reset_index(name="freq")
+    df = df.sort_values(["freq", "name"], ascending=[False, True])
+    return df[["name"]].to_csv(sep="\t", index=False, header=None)
