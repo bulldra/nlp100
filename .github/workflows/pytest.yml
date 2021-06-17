@@ -19,7 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     container: ghcr.io/${{ github.repository }}:latest
     steps:
-      - run: pwd
       - uses: actions/checkout@v2
       - run: cp -r . /data
       - id: data-download
