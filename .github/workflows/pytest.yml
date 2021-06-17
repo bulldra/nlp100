@@ -25,9 +25,13 @@ jobs:
       - id: data-download
         uses: actions/cache@v2
         with:
-          path: /data/work/popular-names.txt
-          key: /data/work/popular-names.txt
+          path: |
+            /data/work/popular-names.txt
+            /data/work/jawiki-country.json.gz
+          key: /data/work/@v2
       - if: steps.data-download.outputs.cache-hit != 'true'
         run: curl https://nlp100.github.io/data/popular-names.txt > /data/work/popular-names.txt
+      - if: steps.data-download.outputs.cache-hit != 'true'
+        run: curl https://nlp100.github.io/data/jawiki-country.json.gz > /data/work/jawiki-country.json.gz
       - run: pytest -s /data/tests/
         working-directory: /data
