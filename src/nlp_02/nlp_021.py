@@ -16,5 +16,4 @@ https://ja.wikipedia.org/wiki/Help:カテゴリ
 
 def execute(input):
     text = nlp_020.execute(input)
-    categories = [t for t in text.splitlines() if re.match(r"\[\[Category:.+\]\]", t)]
-    return "\n".join(categories) + "\n"
+    return [t for t in text.splitlines() if re.match(r"\[\[Category:.+\]\]", t)]

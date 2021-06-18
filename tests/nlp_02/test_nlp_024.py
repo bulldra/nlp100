@@ -17,5 +17,5 @@ https://ja.wikipedia.org/wiki/Help:画像などのファイルのアップロー
 
 def test_execute():
     excepted = util.unix_cmd(f"cat {util.build_expected_path(__file__)}")
-    actual = nlp_024.execute("./work/jawiki-country.json.gz")
+    actual = util.list2text(nlp_024.execute("./work/jawiki-country.json.gz"))
     assert excepted == actual

@@ -16,5 +16,4 @@ https://ja.wikipedia.org/wiki/Help:画像などのファイルのアップロー
 
 def execute(input):
     text = nlp_020.execute(input)
-    files = [x for x in re.findall(r"\[\[ファイル:\s*([^]\|]+?)\|", text)]
-    return "\n".join(files) + "\n"
+    return [x for x in re.findall(r"\[\[ファイル:\s*([^]\|]+?)\|", text)]

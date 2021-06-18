@@ -14,9 +14,8 @@ from nlp_02 import nlp_020
 
 def execute(input):
     text = nlp_020.execute(input)
-    categories = [
+    return [
         re.sub(r"\[\[Category:([^\|\s]+).*\]\]", r"\1", t)
         for t in text.splitlines()
         if re.match(r"\[\[Category:.+\]\]", t)
     ]
-    return "\n".join(categories) + "\n"

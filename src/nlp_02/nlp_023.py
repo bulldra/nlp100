@@ -16,8 +16,7 @@ https://ja.wikipedia.org/wiki/Help:セクション
 
 def execute(input):
     text = nlp_020.execute(input)
-    sections = [
-        f"{x[1]}\t{len(x[0])-1}"
+    return [
+        [x[1], len(x[0]) - 1]
         for x in re.findall(r"(={2,4})\s*([^\|]+?)\s*={2,4}", text)
     ]
-    return "\n".join(sections) + "\n"

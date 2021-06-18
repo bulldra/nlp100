@@ -18,11 +18,5 @@ https://ja.wikipedia.org/wiki/Template:基礎情報_国
 
 def test_execute():
     excepted = util.unix_cmd(f"cat {util.build_expected_path(__file__)}")
-    actual = "\n".join(
-        [
-            f"{k}\t{v}"
-            for k, v in nlp_025.execute("./work/jawiki-country.json.gz").items()
-        ]
-    )
-
-    assert excepted.rstrip() == actual
+    actual = util.dict2tsv(nlp_025.execute("./work/jawiki-country.json.gz"))
+    assert excepted == actual

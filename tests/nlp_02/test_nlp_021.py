@@ -17,5 +17,5 @@ https://ja.wikipedia.org/wiki/Help:カテゴリ
 
 def test_execute():
     excepted = util.unix_cmd(f"cat {util.build_expected_path(__file__)}")
-    actual = nlp_021.execute("./work/jawiki-country.json.gz")
+    actual = util.list2text(nlp_021.execute("./work/jawiki-country.json.gz"))
     assert excepted == actual
