@@ -14,6 +14,6 @@ from nlp_02 import nlp_022
 
 
 def test_execute():
-    excepted = util.unix_cmd(f"cat {util.build_expected_path(__file__)}")
+    excepted = util.expected_file(__file__)
     actual = util.list2text(nlp_022.execute("./work/jawiki-country.json.gz"))
     assert excepted == actual

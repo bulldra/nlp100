@@ -17,6 +17,6 @@ https://docs.python.org/ja/3.9/library/gzip.html
 
 
 def test_execute():
-    excepted = util.unix_cmd(f"cat {util.build_expected_path(__file__)}")
+    excepted = util.expected_file(__file__)
     actual = nlp_020.execute("./work/jawiki-country.json.gz")
     assert excepted == actual

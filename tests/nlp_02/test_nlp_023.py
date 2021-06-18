@@ -16,6 +16,6 @@ https://ja.wikipedia.org/wiki/Help:セクション
 
 
 def test_execute():
-    excepted = util.unix_cmd(f"cat {util.build_expected_path(__file__)}")
+    excepted = util.expected_file(__file__)
     actual = util.matrix2tsv(nlp_023.execute("./work/jawiki-country.json.gz"))
     assert excepted == actual

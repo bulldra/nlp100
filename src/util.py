@@ -11,8 +11,10 @@ def unix_cmd(cmd):
     return str(res.stdout)
 
 
-def build_expected_path(testpy, suffix="txt"):
-    return os.path.abspath(testpy).removesuffix(".py") + "." + suffix
+def expected_file(testpy, suffix="txt"):
+    path = os.path.abspath(testpy).removesuffix(".py") + "." + suffix
+    with open(path, "rt") as f:
+        return f.read()
 
 
 def list2text(list):

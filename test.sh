@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $# == 1 ]; then
-    TEST_PATH="./tests/$1"
+    TEST_PATH="$1"
 else
     TEST_PATH="./tests/"
 fi
