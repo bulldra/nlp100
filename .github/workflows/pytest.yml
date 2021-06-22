@@ -32,5 +32,5 @@ jobs:
         run: |
           curl https://nlp100.github.io/data/popular-names.txt > /data/work/popular-names.txt
           curl https://nlp100.github.io/data/jawiki-country.json.gz > /data/work/jawiki-country.json.gz
-      - run: pytest -s /data/tests/
+      - run: pytest -s
         working-directory: /data

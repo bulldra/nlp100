@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+
 __version__ = "0.1.0"
 
 import util
+
 from nlp_01 import nlp_011
 
 """
