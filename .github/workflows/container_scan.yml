@@ -30,7 +30,7 @@ jobs:
           sudo dpkg -i pandoc.deb
 
       - run: docker pull ghcr.io/${{ github.repository }}:latest
-      - run: trivy -q --severity HIGH,CRITICAL --exit-code 1 ghcr.io/${{ github.repository }}:latest
+      - run: trivy -q --severity CRITICAL --exit-code 1 ghcr.io/${{ github.repository }}:latest
 
       - name: Create Issue
         if: failure()
