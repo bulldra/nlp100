@@ -6,6 +6,7 @@ on:
     paths:
       - 'Dockerfile'
       - 'requirements.txt'
+      - '.github/workflows/*'
 jobs:
   docker_push:
     runs-on: ubuntu-latest
