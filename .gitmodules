@@ -1,0 +1,3 @@
+[submodule "nlp100"]
+	path = nlp100
+	url = git@github.com:bulldra/nlp100.git
