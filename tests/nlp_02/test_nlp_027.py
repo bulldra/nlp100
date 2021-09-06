@@ -16,8 +16,8 @@ https://ja.wikipedia.org/wiki/Help:早見表
 
 
 def test_execute():
-    excepted = util.expected_file(__file__)
-    actual = util.dict2tsv(nlp_027.execute("./work/jawiki-country.json.gz"))
+    excepted = util.tsv2dict(util.expected_file(__file__))
+    actual = nlp_027.execute("./work/jawiki-country.json.gz")
+    print(actual)
 
-
-#    assert excepted == actual
+    assert excepted == actual

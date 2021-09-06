@@ -17,6 +17,15 @@ def expected_file(testpy, suffix="txt"):
         return f.read()
 
 
+def tsv2dict(tsv):
+    dict = {}
+    for li in tsv.splitlines():
+        e = li.split("\t")
+        if len(e) == 2:
+            dict[e[0]] = e[1]
+    return dict
+
+
 def list2text(list):
     return "\n".join(list) + "\n"
 

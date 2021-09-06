@@ -16,7 +16,8 @@ https://ja.wikipedia.org/wiki/Help:早見表
 
 
 def execute(input):
-    return {
-        k: re.sub(r"\[https?://(.+?)\]", r"\1", v)
+    pipe = {
+        k: re.sub(r"\[\[(?!ファイル:)(.+?)\|(.+?)\]\]", r"\2", v)
         for k, v in nlp_026.execute(input).items()
     }
+    return {k: re.sub(r"\[\[(?!ファイル:)(.+?)\]\]", r"\1", v) for k, v in pipe.items()}
