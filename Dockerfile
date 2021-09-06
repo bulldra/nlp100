@@ -1,11 +1,11 @@
-FROM python:3.9.6-slim-buster
+FROM python:3.9.7-slim-buster
 
 ENV TZ=JST-9 PYTHONDONTWRITEBYTECODE=1 PIP_NO_CACHE_DIR=on \
     PIP_DISABLE_PIP_VERSION_CHECK=on
 
 RUN apt-get update -y \
+    && apt-get dist-upgrade -y \
     && apt-get install -y git curl make xz-utils file sudo \
-    && apt-get upgrade -y \
     && rm -rf /var/lib/apt/lists/*
 
 
