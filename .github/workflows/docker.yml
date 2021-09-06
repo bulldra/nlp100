@@ -27,9 +27,9 @@ jobs:
             ghcr.io/${{ github.repository }}:latest
   docker-scan:
     needs: docker-push
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v2
       - run: |
           sudo apt install apt-transport-https gnupg
           wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
