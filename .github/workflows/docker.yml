@@ -43,4 +43,4 @@ jobs:
           curl -L -o pandoc.deb https://github.com/jgm/pandoc/releases/download/${VERSION}/pandoc-${VERSION}-1-amd64.deb
           sudo dpkg -i pandoc.deb
       - run: docker pull ghcr.io/${{ github.repository }}:latest
-      - run: trivy -q --severity CRITICAL --exit-code 1 ghcr.io/${{ github.repository }}:latest
+      - run: trivy -q --severity CRITICAL --exit-code 0 ghcr.io/${{ github.repository }}:latest
