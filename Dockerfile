@@ -5,7 +5,9 @@ ENV TZ=JST-9 PYTHONDONTWRITEBYTECODE=1 PIP_NO_CACHE_DIR=on \
 
 RUN apt-get update -y \
     && apt-get install -y git curl make xz-utils file sudo \
+    && apt-get upgrade -y \
     && rm -rf /var/lib/apt/lists/*
+
 
 RUN mkdir /data
 WORKDIR /data
